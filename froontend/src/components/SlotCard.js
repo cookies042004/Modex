@@ -1,4 +1,3 @@
-// src/components/SlotCard.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -21,7 +20,6 @@ export default function SlotCard({ slot }) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         await navigator.clipboard.writeText(text);
       } else {
-        // fallback for older browsers
         const ta = document.createElement('textarea');
         ta.value = text;
         ta.style.position = 'fixed';
@@ -35,8 +33,6 @@ export default function SlotCard({ slot }) {
       setTimeout(() => setCopied(false), 1600);
     } catch (err) {
       console.error('Copy failed', err);
-      // final fallback: prompt so user can manually copy
-      // (useful if browser blocks clipboard)
       window.prompt('Copy this link', text);
     }
   }

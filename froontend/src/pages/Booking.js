@@ -34,7 +34,7 @@ export default function Booking(){
     setLoading(true);
     try {
       const res = await api.post('/bookings', { slot_id: Number(id), user_name: name, user_contact: contact });
-      setBooking(res.data); // PENDING booking returned
+      setBooking(res.data);
     } catch (err) {
       console.error('create pending error', err);
       alert(err?.response?.data?.error || 'Failed to create booking');

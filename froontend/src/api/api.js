@@ -1,6 +1,6 @@
 ﻿import axios from 'axios';
 
-const API_BASE = process.env.REACT_APP_API_BASE || 'http://localhost:4000/api';
+const API_BASE = process.env.REACT_APP_API_BASE || 'https://modex-bz3q.onrender.com/api';
 const api = axios.create({
   baseURL: API_BASE,
   timeout: 10000,
