@@ -1,7 +1,8 @@
+// src/db.js
 const { Pool } = require('pg');
 require('dotenv').config();
 
-const connectionString = process.env.DATABASE_URL || 'postgres://postgres:postgres123@localhost:5432/doctor_booking';
+const connectionString = process.env.DATABASE_URL;
 const useSsl = String(process.env.DB_SSL || '').toLowerCase() === 'true';
 
 const pool = new Pool({
